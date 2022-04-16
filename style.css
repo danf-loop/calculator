@@ -8,9 +8,37 @@
 }
 
 
+
 #calcContainer {
     height: 400px;
     width: 400px;
     border: 1px solid black;
     display: flex;
+    flex-direction: column;
+}
+
+#output {
+    height: 50px;
+    border: 1px solid black;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.grey {
+    width: 100%;
+
+}
+
+#yellowButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.yellow {
+    display: flex;
+    flex-direction: column;
 }
