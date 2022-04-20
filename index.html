@@ -10,30 +10,31 @@
         <h1>Calculator</h1>
         <div class="grid">
             <div class="output">
-                <div class="number">0</div>
+                <div class="result">0</div>
             </div>
             <div class="buttons">
-                <button class="AC">AC</button>
-                <button class="+/-">+/-</button>
-                <button class="%">%</button>
-                <button class="/">/</button>
-                <button class="1">1</button>
-                <button class="2">2</button>
-                <button class="3">3</button>
-                <button class="X">X</button>
-                <button class="4">4</button>
-                <button class="5">5</button>
-                <button class="6">6</button>
-                <button class="-">-</button>
-                <button class="7">7</button>
-                <button class="8">8</button>
-                <button class="9">9</button>
-                <button class="+">+</button>
-                <button class="span2">0</button>
-                <button class=".">.</button>
-                <button class="=">=</button>
+                <button class="clear" id="AC" onclick="storeVar(this)" value="AC">AC</button>
+                <button class="operator" id="+/-" onclick="storeVar(this)" value="+/-">+/-</button>
+                <button class="operator" id="%" onclick="storeVar(this)" value="%">%</button>
+                <button class="operator" id="%" onclick="storeVar(this)" value="/">/</button>
+                <button class="numbers" id="1" onclick="storeVar(this)" value="1" >1</button>
+                <button class="numbers" id="2" onclick="storeVar(this)" value="2">2</button>
+                <button class="numbers" id="3" onclick="storeVar(this)" value="3">3</button>
+                <button class="operator" id="X" onclick="storeVar(this)" value="X">X</button>
+                <button class="numbers" id="4" onclick="storeVar(this)" value="4">4</button>
+                <button class="numbers" id="5" onclick="storeVar(this)" value="5">5</button>
+                <button class="numbers" id="6" onclick="storeVar(this)" value="6">6</button>
+                <button class="operator" id="-" onclick="storeVar(this)" value="-">-</button>
+                <button class="numbers" id="7" onclick="storeVar(this)" value="7">7</button>
+                <button class="numbers" id="8" onclick="storeVar(this)" value="8">8</button>
+                <button class="numbers" id="9" onclick="storeVar(this)" value="9">9</button>
+                <button class="operator" id="+" onclick="storeVar(this)" value="+">+</button>
+                <button class="span2" id="0" onclick="storeVar(this)" value="0">0</button>
+                <button class="operator" id="." onclick="storeVar(this)" value=".">.</button>
+                <button class="operator" id="=" onclick="storeVar(this)" value="=">=</button>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

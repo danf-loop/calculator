@@ -16,27 +16,26 @@ body {
 .grid {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 200px;
     height: 200px;
     margin: auto;
 }
 
 .output {
-    border: 1px solid black;
     height: 60px;
     background-color: black;
     color: white;
     position: relative;
 }
 
-.number {
+.result {
+    padding-right: 5px;
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
-.buttons {
+ .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
