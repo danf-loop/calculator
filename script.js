@@ -2,9 +2,12 @@ const button = document.querySelector(".buttons");
 let op = document.querySelectorAll(".operator")
 let number = document.querySelectorAll(".numbers")
 
+
+// store button value when clicked
 function storeVar(el) {
     let key = el.getAttribute('value');
-    if 
+    const display = document.querySelector(".result");
+    display.textContent = key
 }
 
 
