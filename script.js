@@ -8,8 +8,14 @@ let number = document.querySelectorAll(".numbers")
 
 // store button value when clicked
 function storeVar(el) {
-    let key = el.getAttribute('value');
     const display = document.querySelector(".result"); // display value of button to display/output
+    let key = el.getAttribute('value');
+    if (key === 'AC') {
+        display.textContent = '0'
+        return;
+    } 
+
+    
     display.textContent += key;   
 }
 
