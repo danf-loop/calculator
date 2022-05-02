@@ -1,23 +1,38 @@
 // main calculator elements
 
-let display = document.querySelector(".result")
-let button = document.querySelector(".buttons");
-let op = document.querySelectorAll(".operator")
-let number = document.querySelectorAll(".numbers")
+const keys = document.querySelector('.buttons')
+
+const display = document.querySelector('.result')
 
 
 // store button value when clicked
-function storeVar(el) {
-    const display = document.querySelector(".result"); // display value of button to display/output
-    let key = el.getAttribute('value');
-    if (key === 'AC') {
-        display.textContent = '0'
-        return;
-    } 
+
+keys.addEventListener('click', event => {
+    if (!event.target.closest('button')) return
+
+    const key = event.target
+    const keyValue = key.textContent // gets the actual value
+    const displayValue = display.textContent // the content in the display
+
+
+    // the default display of 0 will be replaced with the value of the number clicked on otherwise join the numbers
+    if (displayValue == '0') {
+        display.textContent = keyValue // displays the pressed key onto the display
+    } else {
+        display.textContent = displayValue + keyValue // concatenating strings 
+    }
+
+
+})
+
+
 
     
-    display.textContent += key;   
-}
+
+    
+        
+    
+
 
 
 
@@ -27,7 +42,7 @@ function storeVar(el) {
 
 
 
-function operate(operator, num1, num2) {
+function operate() {
 
     
 }
