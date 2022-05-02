@@ -10,16 +10,26 @@ const display = document.querySelector('.result')
 keys.addEventListener('click', event => {
     if (!event.target.closest('button')) return
 
-    const key = event.target
-    const keyValue = key.textContent // gets the actual value
-    const displayValue = display.textContent // the content in the display
+    const key = event.target;
+    console.log(key);
+    const keyValue = key.textContent; // gets the actual value
+    console.log(keyValue);
+    const displayValue = display.textContent; // the content in the display
 
 
-    // the default display of 0 will be replaced with the value of the number clicked on otherwise join the numbers
-    if (displayValue == '0') {
-        display.textContent = keyValue // displays the pressed key onto the display
+    // Check if it a number key
+    if (key.classList.contains('numbers')) {
+      if (displayValue == '0') { // the default display of 0 will be replaced with the value of the number clicked on otherwise join the numbers
+        display.textContent = keyValue; // displays the pressed key onto the display
     } else {
-        display.textContent = displayValue + keyValue // concatenating strings 
+        display.textContent = displayValue + keyValue; // concatenating the number strings together
+    }
+    }
+   
+
+    // Check if it is a operator key
+    if (key.classList.contains('operator')) {
+        console.log(key);
     }
 
 
