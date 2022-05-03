@@ -46,83 +46,51 @@ keys.addEventListener('click', event => {
 
    
     if (type == 'negative') {
+        if (displayValue > 0)
             negativeNumber = '-' + displayValue
             display.textContent = negativeNumber
-        }
+
+    }
+
+            
         
     if (type == 'equal') {
-        const firstNumber = parseInt(calculator.dataset.firstNumber);
+        const firstNumber = calculator.dataset.firstNumber;
         const operator = calculator.dataset.operator;
-        const secondNumber = parseInt(displayValue);
+        const secondNumber = displayValue;
         console.log(firstNumber, operator, secondNumber)
-        
-        
-        let result = ''
-        if (operator == '+') {
-            result = firstNumber + secondNumber
-            display.textContent = result
-        } else if (operator == 'x') {
-            result = firstNumber * secondNumber
-            display.textContent = result
-        } else if (operator == '/') {
-            result = firstNumber / secondNumber
-            display.textContent = result
-        } else if (operator == '-') {
-            result = firstNumber - secondNumber
-            display.textContent = result
-        }
-   
+        display.textContent = operate(firstNumber, operator, secondNumber)
+
     }
 
     if (type == 'clear') {
         display.textContent = '0'
     }
 
-   
-
-    
-
     calculator.dataset.previousKeyType = type
-
-
     })
 
 
+function operate(firstNumber, operator, secondNumber) {
+    firstNumber = parseInt(firstNumber)
+    secondNumber = parseInt(secondNumber)
+    let result = ''
+    if (operator == '+') {
+        result = firstNumber + secondNumber
+        display.textContent = result
+    } else if (operator == 'x') {
+        result = firstNumber * secondNumber
+        display.textContent = result
+    } else if (operator == '/') {
+        result = firstNumber / secondNumber
+        display.textContent = result
+    } else if (operator == '-') {
+        result = firstNumber - secondNumber
+        display.textContent = result
+    }
+    return result
+}
 
     
 
-    
-        
-    
-
-
-
-
-
-
-// memory store: figure out how to store the value of the button clicked
-
-
-
-// function operate() {
-
-    
-// }
-
-
-// function add(num1, num2) {
-//     return num1 + num2;
-// }
-
-// function subtract(num1, num2) {
-//     return num1 - num2;
-// }
-
-// function multiply(num1, num2) {
-//     return num1 * num2;
-// }
-
-// function divide(num1, num2) {
-//     return num1 / num2;
-// }
 
