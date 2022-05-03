@@ -42,15 +42,20 @@ keys.addEventListener('click', event => {
 
         calculator.dataset.firstNumber = displayValue;
         calculator.dataset.operator = keyValue;
-
-
       }
 
+   
+    if (type == 'negative') {
+            negativeNumber = '-' + displayValue
+            display.textContent = negativeNumber
+        }
+        
     if (type == 'equal') {
         const firstNumber = parseInt(calculator.dataset.firstNumber);
         const operator = calculator.dataset.operator;
         const secondNumber = parseInt(displayValue);
         console.log(firstNumber, operator, secondNumber)
+        
         
         let result = ''
         if (operator == '+') {
@@ -66,14 +71,16 @@ keys.addEventListener('click', event => {
             result = firstNumber - secondNumber
             display.textContent = result
         }
-
-
-        
+   
     }
 
     if (type == 'clear') {
         display.textContent = '0'
     }
+
+   
+
+    
 
     calculator.dataset.previousKeyType = type
 
