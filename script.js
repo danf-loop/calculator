@@ -6,10 +6,6 @@ const keys = calculator.querySelector('.buttons')
 const display = calculator.querySelector('.result')
 
 
-
-
-
-
 // store button value when clicked
 
 keys.addEventListener('click', event => {
@@ -23,9 +19,9 @@ keys.addEventListener('click', event => {
     
     const displayValue = display.textContent; // the content in the display
 
-    const  { type } = key.dataset
+    const  { type } = key.dataset;
 
-    const { previousKeyType } = calculator.dataset
+    const { previousKeyType } = calculator.dataset;
 
 
     // Check if it a number key
@@ -40,15 +36,48 @@ keys.addEventListener('click', event => {
  
     }
    
-
     // Check if it is a operator key
     if (type == 'operator') {
         console.log(key);
+
+        calculator.dataset.firstNumber = displayValue;
+        calculator.dataset.operator = keyValue;
+
+
       }
+
+    if (type == 'equal') {
+        const firstNumber = parseInt(calculator.dataset.firstNumber);
+        const operator = calculator.dataset.operator;
+        const secondNumber = parseInt(displayValue);
+        console.log(firstNumber, operator, secondNumber)
+        
+        let result = ''
+        if (operator == '+') {
+            result = firstNumber + secondNumber
+            display.textContent = result
+        } else if (operator == 'x') {
+            result = firstNumber * secondNumber
+            display.textContent = result
+        } else if (operator == '/') {
+            result = firstNumber / secondNumber
+            display.textContent = result
+        } else if (operator == '-') {
+            result = firstNumber - secondNumber
+            display.textContent = result
+        }
+
+
+        
+    }
+
+    if (type == 'clear') {
+        display.textContent = '0'
+    }
 
     calculator.dataset.previousKeyType = type
 
-    
+
     })
 
 
